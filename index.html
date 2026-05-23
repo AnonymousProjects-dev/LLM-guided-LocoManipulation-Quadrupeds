@@ -58,6 +58,17 @@
   .links a:hover {
     text-decoration: underline;
   }
+  .video-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+  .video-row iframe {
+  width: 48%;
+  height: 270px;
+}
 </style>
 </head>
 
@@ -95,14 +106,15 @@ demonstrating improved efficiency and robustness.
 <p>
 Real-world execution of the full loco-manipulation framework across diverse tasks.
 </p>
+<div class="video-row">
+  <iframe
+    src="https://www.youtube.com/embed/VIDEO_ID_1"
+    frameborder="0" allowfullscreen></iframe>
 
-<iframe width="800" height="450"
-src="https://www.youtube.com/embed/VIDEO_ID_1"
-frameborder="0" allowfullscreen></iframe>
-
-<iframe width="800" height="450"
-src="https://www.youtube.com/embed/VIDEO_ID_2"
-frameborder="0" allowfullscreen></iframe>
+  <iframe
+    src="https://www.youtube.com/embed/VIDEO_ID_2"
+    frameborder="0" allowfullscreen></iframe>
+</div>
 
 <!-- ⚙️ PIPELINE -->
 <h2>Data Generation Pipeline</h2>
