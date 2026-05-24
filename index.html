@@ -81,7 +81,7 @@
 <h1>LLM-guided Efficient Loco-Manipulation for Quadruped Robots</h1>
 
 <p>
-Submitted to CoRL 2026.
+Submitted to CoRL 2026 (under review).
 </p>
 
 <div class="links">
@@ -92,18 +92,24 @@ Submitted to CoRL 2026.
 <!-- ABSTRACT -->
 <h2>Abstract</h2>
 <p>
-The deployment of robotic systems in real-world environments with minimal external intervention remains challenging. 
-We propose a planar loco-manipulation framework that enables quadruped robots to reason about and act on their environments 
-to achieve task-specific objectives. The system integrates a fine-tuned LLM-based planner with learned low-level navigation 
-and manipulation policies trained using synthetic data. We validate the framework across diverse loco-manipulation tasks, 
-demonstrating improved efficiency and robustness.
+The deployment of robotic systems in real-world environments with minimal external intervention remains challenging. Real-world environments are
+inherently uncertain and prone to disturbances that can alter scene semantics, compromising task execution. As a step towards addressing this challenge, we propose
+a planar loco-manipulation -navigation and object pushing- framework that enables quadruped robots to reason about and act on their environments to achieve
+task-specific objectives. At the high level, the framework integrates a fine-tuned LLM-based task planner that switches between planar navigation and manipulation skills trained with model-free reinforcement learning. The planner is trained9
+on synthetically generated data and demonstrates robust action planning under environment disturbances. The proposed data generation pipeline offers a quick
+method to generate scenes and demonstrations for diverse cases, reducing reliance on expensive real-world data collection. At the low level, we introduce an end
+to-end whole-body planar manipulation policy that exhibits adaptive and natural interaction behaviors. We validate the complete framework across diverse robot
+centric loco-manipulation tasks in unstructured environments. Additionally, we demonstrate that the proposed manipulation policy outperforms the conventional
+hierarchical approach, reducing task completion time by more than 60%. The generated dataset is available on the project website.
 </p>
 
 <!-- FRAMEWORK -->
-<h2>Method</h2>
+<h2>Method Overview</h2>
 <img src="new_framework_img_may7_v2.png">
 <p><i>Overview of the proposed planar loco-manipulation framework.</i></p>
-
+<p>We generate synthetic training data in a 2D environment and apply targeted augmentation to efficiently expand the dataset. An LLM-based task planner is fine-tuned on this data to enable structured decision-making under varying scene configurations. 
+At the low level, we study the behavioral differences between hierarchical and end-to-end loco-manipulation policies, motivating the design of our control stack. We then introduce a specialized end-to-end manipulation policy that exhibits adaptive and natural interaction behaviors in real-world settings. 
+</p>
 <!-- 🔥 HARDWARE -->
 <h2>Hardware Results</h2>
 <p>
