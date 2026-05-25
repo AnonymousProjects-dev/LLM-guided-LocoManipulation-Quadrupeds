@@ -84,6 +84,9 @@
 Submitted to CoRL 2026 (under review).
 </p>
 
+<p>
+The non-discretized data can be downloaded from the link below. The code opens a 2D PyGame environment that visualizes the trajectories. Use "Up" and "Down" keys to switch between trajectories, and "Right" and "Left" to progress the states for multi-state trajectories.
+</p>
 <div class="links">
   <a href="https://drive.google.com/uc?export=download&id=1gWTfAcTBfoCYAJ-cAu90qEYCzrpQrPIz"> Dataset</a>
   <a href="https://drive.google.com/uc?export=download&id=1b7wt2h5e6DyqAzBLClPCZQhj_X1FKYY5"> Code for visualizing the dataset</a>
@@ -93,7 +96,6 @@ Submitted to CoRL 2026 (under review).
 <h2>Abstract</h2>
 <p>
 The deployment of robotic systems in real-world environments with minimal external intervention remains challenging due to disturbances and uncertainties that can alter scene semantics, compromising task execution. As a step towards addressing this challenge, we propose a planar loco-manipulation framework -navigation and object pushing -that enables quadruped robots to reason about and act on their environments to achieve task-specific objectives. At the high level, the framework integrates a fine-tuned LLM-based task planner that, starting from a written task description, switches between planar navigation and manipulation skills trained with model-free reinforcement learning. The planner is trained on synthetically generated data and demonstrates robust action planning under environment disturbances. The proposed data generation pipeline provides a scalable method to generate scenes and demonstrations for diverse cases, reducing reliance on expensive real-world data collection. At the low level, we introduce an end-to-end whole-body planar manipulation policy that exhibits adaptive and natural interaction behaviors. We validate the complete framework across diverse robot-centric loco-manipulation tasks in unstructured environments. Additionally, we demonstrate that the proposed manipulation policy outperforms the conventional hierarchical approach, reducing task completion time by more than $60\%$.
-The non-discretized data can be downloaded from the link below. The code opens a 2D PyGame environment that visualizes the trajectories. Use "Up" and "Down" keys to switch between trajectories, and "Right" and "Left" to progress the states for multi-state trajectories.
 </p>
 
 <!-- FRAMEWORK -->
