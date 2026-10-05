@@ -58,20 +58,51 @@
   .links a:hover {
     text-decoration: underline;
   }
-  .video-row {
+    
+.video-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-  .video-row iframe {
-  width: 48%;
-  height: 270px;
+.hardware-group {
+  margin-top: 32px;
 }
-  .video-row video {
+
+.hardware-group h3 {
+  font-size: 21px;
+  margin-bottom: 0;
+}
+
+.skill-sequence {
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.video-card {
   width: 48%;
+}
+
+.video-card video {
+  width: 100%;
   border-radius: 6px;
+  display: block;
+}
+
+.video-caption {
+  font-size: 15px;
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .video-card {
+    width: 100%;
+  }
 }
 </style>
 </head>
@@ -104,19 +135,85 @@ Robotic navigation typically assumes that a feasible collision-free route exists
 <p>We generate synthetic training data in a 2D environment and apply targeted augmentation to efficiently expand the dataset. An LLM-based task planner is fine-tuned on this data to enable structured decision-making under varying scene configurations, requiring different skill compositions to solve the task objective. 
 At the low level, we study the behavioral differences between hierarchical and end-to-end loco-manipulation policies, motivating the design of our control stack. Consequently, we introduce a specialized end-to-end manipulation policy that exhibits adaptive and natural interaction behaviors in real-world settings. 
 </p>
-<!--  HARDWARE -->
+<!-- HARDWARE -->
 <h2>Hardware Results</h2>
 <p>
-Real-world execution of the full loco-manipulation framework.
+Real-world execution of the complete loco-manipulation framework across
+interactive navigation, long-horizon, and shifted task structures.
 </p>
-<div class="video-row">
-  <video controls autoplay loop muted>
-    <source src="changeinenv_masked_2.mp4" type="video/mp4">
-  </video>
 
-  <video controls autoplay loop muted>
-    <source src="scene4_run6_masked.mp4" type="video/mp4">
-  </video>
+<!-- Interactive Navigation -->
+<div class="hardware-group">
+  <h3>Interactive Navigation</h3>
+  <p class="skill-sequence">
+    Manipulation &rarr; Navigation
+  </p>
+
+  <div class="video-row">
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="interactive_navigation_scene1.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 1</p>
+    </div>
+
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="interactive_navigation_scene2.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 2</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Long-Horizon Interactive Navigation -->
+<div class="hardware-group">
+  <h3>Long-Horizon Interactive Navigation</h3>
+  <p class="skill-sequence">
+    Navigation &rarr; Manipulation &rarr; Navigation
+  </p>
+
+  <div class="video-row">
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="long_horizon_scene1.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 1</p>
+    </div>
+
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="long_horizon_scene2.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 2</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Shifted Interactive Manipulation -->
+<div class="hardware-group">
+  <h3>Shifted Interactive Manipulation</h3>
+  <p class="skill-sequence">
+    Manipulation &rarr; Navigation &rarr; Manipulation
+  </p>
+
+  <div class="video-row">
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="shifted_scene1.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 1</p>
+    </div>
+
+    <div class="video-card">
+      <video controls loop muted playsinline preload="metadata">
+        <source src="shifted_scene2.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Scene 2</p>
+    </div>
+  </div>
 </div>
 
 <!--  PIPELINE 
